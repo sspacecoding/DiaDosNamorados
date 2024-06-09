@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DiaDosNamorados
+{
+    public partial class PedidoDeNamoroForm : Form
+    {
+        public PedidoDeNamoroForm()
+        {
+            InitializeComponent();
+
+            this.Text = "Pergunta Importante!";
+            labelQuestion.Text = "Tu quer namorar comigo?";
+            labelQuestion.AutoSize = true;            
+
+            buttonYes.Text = "Sim";
+            buttonYes.Click += ButtonYes_Click;
+
+            buttonNo.Text = "Não";
+            buttonNo.MouseMove += ButtonNo_MouseMove;
+        }
+
+        private void ButtonYes_Click(object sender, EventArgs e)
+        {
+            // Aqui tu podes adicionar o que desejar que aconteça quando a pessoa clicar em "Sim"
+            MessageBox.Show("Yay! Somos um casal ❤️", "Eba!");
+
+            // Exemplo de algo especial: abrir uma página web, mudar a cor do formulário, etc.
+            this.BackColor = Color.LightPink; // Muda a cor de fundo do formulário
+        }
+
+        private void ButtonNo_MouseMove(object sender, MouseEventArgs e)
+        {
+            Random random = new Random();
+            buttonNo.Left = random.Next(Math.Max(0, this.Width - buttonNo.Width));
+            buttonNo.Top = random.Next(Math.Max(0, this.Height - buttonNo.Height));
+        }
+    }
+}
