@@ -43,4 +43,4 @@ namespace DiaDosNamorados
             buttonNo.Top = random.Next(Math.Max(0, this.Height - buttonNo.Height));
         }
     }
-}
+} 
